@@ -222,14 +222,17 @@ Before running this, confirm each `dayN/.gitignore` excludes `node_modules/`, `d
 
 ---
 
-## 6. Reference material not in this repo
+## 6. Reference material
+
+**`PLAN.md` at the repo root is the specification for Days 2–7.** It carries the per-day Teach / Demo / Exercise / Graded-practical breakdown, mapped bullet-by-bullet to the client TOC so nothing sold goes undelivered, plus the orchestration and verification plan. Read it before writing any day's content. It comes down with the clone.
+
+One item is still outside the repo:
 
 | Item | Location |
 |---|---|
-| The full plan — per-day Teach/Demo/Exercise/Graded breakdown | `C:\Users\nitis\.claude\plans\i-have-this-toc-curried-lampson.md` |
 | Client TOC spreadsheet | `C:\Users\nitis\Dropbox\...\Downloads\Claude_Code_Training_TOC (2).xlsx` |
 
-**Copy both onto the new laptop separately** — they are outside this repo and will not come down with the clone. The plan file in particular is the specification for Days 2–7; without it you are rebuilding the day breakdown from scratch.
+Copy it across separately if you need the original client wording. `PLAN.md` already reflects its full contents, so this is a nice-to-have rather than a blocker.
 
 ---
 
