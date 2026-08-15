@@ -1,0 +1,8 @@
+{
+  "name": "taskflow-kit",
+  "version": "1.0.0",
+  "description": "TaskFlow API commands, skill, and reviewer agents bundled as a plugin.",
+  "commands": "./commands",
+  "skills": "./skills",
+  "agents": "./agents"
+}

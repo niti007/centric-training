@@ -1,0 +1,712 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`reportBuilder characterization matches the known-good snapshot excluding zero-cost tasks 1`] = `
+"=========================================
+           TASKFLOW STATUS REPORT
+=========================================
+Generated: 2026-06-15T12:00:00.000Z
+
+Total tasks in scope: 15
+
+Status breakdown:
+  open: 14
+  in_progress: 1
+  done: 0
+
+Overdue tasks: 5
+  titles: Draft proposal, Review budget, Overdue invoice, Today deadline, Overdue renewal
+
+Total cost across scope: $5644.25
+
+-----------------------------------------
+PER-USER BREAKDOWN
+-----------------------------------------
+
+User: Ada Lovelace (u1)
+  tasks: 6
+  open: 5, in_progress: 1, done: 0
+  overdue: 3
+  cost: $1266.10
+  task list:
+    - [OPEN] (OVERDUE) Draft proposal -- $0.10 (small)
+    - [OPEN] (OVERDUE) Review budget -- $0.20 (small)
+    - [IN PROGRESS] Client call -- $15.50
+    - [OPEN] (OVERDUE) Overdue invoice -- $250.00 (large)
+    - [OPEN] Far future planning -- $1000.00 (large)
+    - [OPEN] Fractional cost supplies -- $0.30 (small)
+
+User: Grace Hopper (u2)
+  tasks: 5
+  open: 5, in_progress: 0, done: 0
+  overdue: 1
+  cost: $558.05
+  task list:
+    - [OPEN] Design review -- $45.00
+    - [OPEN] Fix flaky test -- $12.75
+    - [OPEN] Onboard new hire -- $0.10 (small)
+    - [OPEN] Far future audit -- $500.00 (large)
+    - [OPEN] (OVERDUE) Today deadline -- $0.20 (small)
+
+User: Alan Turing (u3)
+  tasks: 4
+  open: 4, in_progress: 0, done: 0
+  overdue: 1
+  cost: $3820.10
+  task list:
+    - [OPEN] Team offsite -- $3000.00 (large)
+    - [OPEN] Fractional supplies 2 -- $0.10 (small)
+    - [OPEN] Far future migration -- $800.00 (large)
+    - [OPEN] (OVERDUE) Overdue renewal -- $20.00
+
+-----------------------------------------
+TASK DETAIL (WITH OWNER LOOKUP)
+-----------------------------------------
+
+Task t1: Draft proposal
+  owner: Ada Lovelace <ada@taskflow.dev>
+  status: open
+  due: 2026-06-15T12:00:00.000Z
+  ** OVERDUE **
+  desc: Write the initial draft
+  cost: $0.10
+
+Task t2: Review budget
+  owner: Ada Lovelace <ada@taskflow.dev>
+  status: open
+  due: 2026-06-15T12:00:00.000Z
+  ** OVERDUE **
+  desc: Check Q3 budget
+  cost: $0.20
+
+Task t3: Client call
+  owner: Ada Lovelace <ada@taskflow.dev>
+  status: in_progress
+  due: 2026-06-17T12:00:00.000Z
+  on track
+  desc: Sync with client
+  cost: $15.50
+
+Task t4: Overdue invoice
+  owner: Ada Lovelace <ada@taskflow.dev>
+  status: open
+  due: 2026-06-10T12:00:00.000Z
+  ** OVERDUE **
+  desc: Follow up on late invoice
+  cost: $250.00
+
+Task t6: Far future planning
+  owner: Ada Lovelace <ada@taskflow.dev>
+  status: open
+  due: 2027-06-15T12:00:00.000Z
+  on track
+  desc: Roadmap for next year
+  cost: $1000.00
+
+Task t8: Fractional cost supplies
+  owner: Ada Lovelace <ada@taskflow.dev>
+  status: open
+  due: 2026-06-18T12:00:00.000Z
+  on track
+  desc: Buy office supplies
+  cost: $0.30
+
+Task t9: Design review
+  owner: Grace Hopper <grace@taskflow.dev>
+  status: open
+  due: 2026-06-16T12:00:00.000Z
+  on track
+  desc: Review new mockups
+  cost: $45.00
+
+Task t12: Fix flaky test
+  owner: Grace Hopper <grace@taskflow.dev>
+  status: open
+  due: 2026-06-16T12:00:00.000Z
+  on track
+  desc: Investigate CI flakiness
+  cost: $12.75
+
+Task t13: Onboard new hire
+  owner: Grace Hopper <grace@taskflow.dev>
+  status: open
+  due: 2026-06-22T12:00:00.000Z
+  on track
+  desc: Prepare onboarding docs
+  cost: $0.10
+
+Task t15: Far future audit
+  owner: Grace Hopper <grace@taskflow.dev>
+  status: open
+  due: 2027-04-11T12:00:00.000Z
+  on track
+  desc: Annual compliance audit
+  cost: $500.00
+
+Task t16: Today deadline
+  owner: Grace Hopper <grace@taskflow.dev>
+  status: open
+  due: 2026-06-15T12:00:00.000Z
+  ** OVERDUE **
+  desc: Submit expense report
+  cost: $0.20
+
+Task t20: Team offsite
+  owner: Alan Turing <alan@taskflow.dev>
+  status: open
+  due: 2026-07-30T12:00:00.000Z
+  on track
+  desc: Plan team offsite
+  cost: $3000.00
+
+Task t21: Fractional supplies 2
+  owner: Alan Turing <alan@taskflow.dev>
+  status: open
+  due: 2026-06-17T12:00:00.000Z
+  on track
+  desc: Buy stationery
+  cost: $0.10
+
+Task t22: Far future migration
+  owner: Alan Turing <alan@taskflow.dev>
+  status: open
+  due: 2026-12-12T12:00:00.000Z
+  on track
+  desc: Plan DB migration
+  cost: $800.00
+
+Task t25: Overdue renewal
+  owner: Alan Turing <alan@taskflow.dev>
+  status: open
+  due: 2026-05-31T12:00:00.000Z
+  ** OVERDUE **
+  desc: Renew domain
+  cost: $20.00
+
+-----------------------------------------
+COST BUCKETS
+-----------------------------------------
+  free: 0
+  small (<$1): 6
+  mid ($1-$100): 4
+  large (>$100): 5
+
+=========================================
+END OF REPORT
+========================================="
+`;
+
+exports[`reportBuilder characterization matches the known-good snapshot filtered to open tasks only 1`] = `
+"=========================================
+           TASKFLOW STATUS REPORT
+=========================================
+Generated: 2026-06-15T12:00:00.000Z
+
+Total tasks in scope: 19
+
+Status breakdown:
+  open: 19
+  in_progress: 0
+  done: 0
+
+Overdue tasks: 8
+  titles: Draft proposal, Review budget, Overdue invoice, Overdue report, Today deadline, Overdue security patch, Today code freeze, Overdue renewal
+
+Total cost across scope: $5628.75
+
+-----------------------------------------
+PER-USER BREAKDOWN
+-----------------------------------------
+
+User: Ada Lovelace (u1)
+  tasks: 6
+  open: 6, in_progress: 0, done: 0
+  overdue: 3
+  cost: $1250.60
+  task list:
+    - [OPEN] (OVERDUE) Draft proposal -- $0.10 (small)
+    - [OPEN] (OVERDUE) Review budget -- $0.20 (small)
+    - [OPEN] (OVERDUE) Overdue invoice -- $250.00 (large)
+    - [OPEN] Far future planning -- $1000.00 (large)
+    - [OPEN] Zero cost favor -- free
+    - [OPEN] Fractional cost supplies -- $0.30 (small)
+
+User: Grace Hopper (u2)
+  tasks: 6
+  open: 6, in_progress: 0, done: 0
+  overdue: 2
+  cost: $558.05
+  task list:
+    - [OPEN] Design review -- $45.00
+    - [OPEN] (OVERDUE) Overdue report -- free
+    - [OPEN] Fix flaky test -- $12.75
+    - [OPEN] Onboard new hire -- $0.10 (small)
+    - [OPEN] Far future audit -- $500.00 (large)
+    - [OPEN] (OVERDUE) Today deadline -- $0.20 (small)
+
+User: Alan Turing (u3)
+  tasks: 7
+  open: 7, in_progress: 0, done: 0
+  overdue: 3
+  cost: $3820.10
+  task list:
+    - [OPEN] (OVERDUE) Overdue security patch -- free
+    - [OPEN] Write unit tests -- free
+    - [OPEN] Team offsite -- $3000.00 (large)
+    - [OPEN] Fractional supplies 2 -- $0.10 (small)
+    - [OPEN] Far future migration -- $800.00 (large)
+    - [OPEN] (OVERDUE) Today code freeze -- free
+    - [OPEN] (OVERDUE) Overdue renewal -- $20.00
+
+-----------------------------------------
+TASK DETAIL (WITH OWNER LOOKUP)
+-----------------------------------------
+
+Task t1: Draft proposal
+  owner: Ada Lovelace <ada@taskflow.dev>
+  status: open
+  due: 2026-06-15T12:00:00.000Z
+  ** OVERDUE **
+  desc: Write the initial draft
+  cost: $0.10
+
+Task t2: Review budget
+  owner: Ada Lovelace <ada@taskflow.dev>
+  status: open
+  due: 2026-06-15T12:00:00.000Z
+  ** OVERDUE **
+  desc: Check Q3 budget
+  cost: $0.20
+
+Task t4: Overdue invoice
+  owner: Ada Lovelace <ada@taskflow.dev>
+  status: open
+  due: 2026-06-10T12:00:00.000Z
+  ** OVERDUE **
+  desc: Follow up on late invoice
+  cost: $250.00
+
+Task t6: Far future planning
+  owner: Ada Lovelace <ada@taskflow.dev>
+  status: open
+  due: 2027-06-15T12:00:00.000Z
+  on track
+  desc: Roadmap for next year
+  cost: $1000.00
+
+Task t7: Zero cost favor
+  owner: Ada Lovelace <ada@taskflow.dev>
+  status: open
+  due: 2026-06-20T12:00:00.000Z
+  on track
+  desc: Small favor for teammate
+  cost: free
+
+Task t8: Fractional cost supplies
+  owner: Ada Lovelace <ada@taskflow.dev>
+  status: open
+  due: 2026-06-18T12:00:00.000Z
+  on track
+  desc: Buy office supplies
+  cost: $0.30
+
+Task t9: Design review
+  owner: Grace Hopper <grace@taskflow.dev>
+  status: open
+  due: 2026-06-16T12:00:00.000Z
+  on track
+  desc: Review new mockups
+  cost: $45.00
+
+Task t10: Overdue report
+  owner: Grace Hopper <grace@taskflow.dev>
+  status: open
+  due: 2026-06-13T12:00:00.000Z
+  ** OVERDUE **
+  desc: Send weekly report
+  cost: free
+
+Task t12: Fix flaky test
+  owner: Grace Hopper <grace@taskflow.dev>
+  status: open
+  due: 2026-06-16T12:00:00.000Z
+  on track
+  desc: Investigate CI flakiness
+  cost: $12.75
+
+Task t13: Onboard new hire
+  owner: Grace Hopper <grace@taskflow.dev>
+  status: open
+  due: 2026-06-22T12:00:00.000Z
+  on track
+  desc: Prepare onboarding docs
+  cost: $0.10
+
+Task t15: Far future audit
+  owner: Grace Hopper <grace@taskflow.dev>
+  status: open
+  due: 2027-04-11T12:00:00.000Z
+  on track
+  desc: Annual compliance audit
+  cost: $500.00
+
+Task t16: Today deadline
+  owner: Grace Hopper <grace@taskflow.dev>
+  status: open
+  due: 2026-06-15T12:00:00.000Z
+  ** OVERDUE **
+  desc: Submit expense report
+  cost: $0.20
+
+Task t18: Overdue security patch
+  owner: Alan Turing <alan@taskflow.dev>
+  status: open
+  due: 2026-06-14T12:00:00.000Z
+  ** OVERDUE **
+  desc: Apply CVE patch
+  cost: free
+
+Task t19: Write unit tests
+  owner: Alan Turing <alan@taskflow.dev>
+  status: open
+  due: 2026-06-18T12:00:00.000Z
+  on track
+  desc: Increase coverage
+  cost: free
+
+Task t20: Team offsite
+  owner: Alan Turing <alan@taskflow.dev>
+  status: open
+  due: 2026-07-30T12:00:00.000Z
+  on track
+  desc: Plan team offsite
+  cost: $3000.00
+
+Task t21: Fractional supplies 2
+  owner: Alan Turing <alan@taskflow.dev>
+  status: open
+  due: 2026-06-17T12:00:00.000Z
+  on track
+  desc: Buy stationery
+  cost: $0.10
+
+Task t22: Far future migration
+  owner: Alan Turing <alan@taskflow.dev>
+  status: open
+  due: 2026-12-12T12:00:00.000Z
+  on track
+  desc: Plan DB migration
+  cost: $800.00
+
+Task t23: Today code freeze
+  owner: Alan Turing <alan@taskflow.dev>
+  status: open
+  due: 2026-06-15T12:00:00.000Z
+  ** OVERDUE **
+  desc: Prep release
+  cost: free
+
+Task t25: Overdue renewal
+  owner: Alan Turing <alan@taskflow.dev>
+  status: open
+  due: 2026-05-31T12:00:00.000Z
+  ** OVERDUE **
+  desc: Renew domain
+  cost: $20.00
+
+-----------------------------------------
+COST BUCKETS
+-----------------------------------------
+  free: 5
+  small (<$1): 6
+  mid ($1-$100): 3
+  large (>$100): 5
+
+=========================================
+END OF REPORT
+========================================="
+`;
+
+exports[`reportBuilder characterization matches the known-good snapshot for the default report 1`] = `
+"=========================================
+           TASKFLOW STATUS REPORT
+=========================================
+Generated: 2026-06-15T12:00:00.000Z
+
+Total tasks in scope: 25
+
+Status breakdown:
+  open: 19
+  in_progress: 3
+  done: 3
+
+Overdue tasks: 8
+  titles: Draft proposal, Review budget, Overdue invoice, Overdue report, Today deadline, Overdue security patch, Today code freeze, Overdue renewal
+
+Total cost across scope: $5644.25
+
+-----------------------------------------
+PER-USER BREAKDOWN
+-----------------------------------------
+
+User: Ada Lovelace (u1)
+  tasks: 8
+  open: 6, in_progress: 1, done: 1
+  overdue: 3
+  cost: $1266.10
+  task list:
+    - [OPEN] (OVERDUE) Draft proposal -- $0.10 (small)
+    - [OPEN] (OVERDUE) Review budget -- $0.20 (small)
+    - [IN PROGRESS] Client call -- $15.50
+    - [OPEN] (OVERDUE) Overdue invoice -- $250.00 (large)
+    - [DONE] Archive old docs -- free
+    - [OPEN] Far future planning -- $1000.00 (large)
+    - [OPEN] Zero cost favor -- free
+    - [OPEN] Fractional cost supplies -- $0.30 (small)
+
+User: Grace Hopper (u2)
+  tasks: 8
+  open: 6, in_progress: 1, done: 1
+  overdue: 2
+  cost: $558.05
+  task list:
+    - [OPEN] Design review -- $45.00
+    - [OPEN] (OVERDUE) Overdue report -- free
+    - [IN PROGRESS] Sprint planning -- free
+    - [OPEN] Fix flaky test -- $12.75
+    - [OPEN] Onboard new hire -- $0.10 (small)
+    - [DONE] Update dependencies -- free
+    - [OPEN] Far future audit -- $500.00 (large)
+    - [OPEN] (OVERDUE) Today deadline -- $0.20 (small)
+
+User: Alan Turing (u3)
+  tasks: 9
+  open: 7, in_progress: 1, done: 1
+  overdue: 3
+  cost: $3820.10
+  task list:
+    - [IN PROGRESS] Refactor auth module -- free
+    - [OPEN] (OVERDUE) Overdue security patch -- free
+    - [OPEN] Write unit tests -- free
+    - [OPEN] Team offsite -- $3000.00 (large)
+    - [OPEN] Fractional supplies 2 -- $0.10 (small)
+    - [OPEN] Far future migration -- $800.00 (large)
+    - [OPEN] (OVERDUE) Today code freeze -- free
+    - [DONE] Zero cost review -- free
+    - [OPEN] (OVERDUE) Overdue renewal -- $20.00
+
+-----------------------------------------
+TASK DETAIL (WITH OWNER LOOKUP)
+-----------------------------------------
+
+Task t1: Draft proposal
+  owner: Ada Lovelace <ada@taskflow.dev>
+  status: open
+  due: 2026-06-15T12:00:00.000Z
+  ** OVERDUE **
+  desc: Write the initial draft
+  cost: $0.10
+
+Task t2: Review budget
+  owner: Ada Lovelace <ada@taskflow.dev>
+  status: open
+  due: 2026-06-15T12:00:00.000Z
+  ** OVERDUE **
+  desc: Check Q3 budget
+  cost: $0.20
+
+Task t3: Client call
+  owner: Ada Lovelace <ada@taskflow.dev>
+  status: in_progress
+  due: 2026-06-17T12:00:00.000Z
+  on track
+  desc: Sync with client
+  cost: $15.50
+
+Task t4: Overdue invoice
+  owner: Ada Lovelace <ada@taskflow.dev>
+  status: open
+  due: 2026-06-10T12:00:00.000Z
+  ** OVERDUE **
+  desc: Follow up on late invoice
+  cost: $250.00
+
+Task t5: Archive old docs
+  owner: Ada Lovelace <ada@taskflow.dev>
+  status: done
+  due: 2026-05-16T12:00:00.000Z
+  completed
+  desc: Cleanup shared drive
+  cost: free
+
+Task t6: Far future planning
+  owner: Ada Lovelace <ada@taskflow.dev>
+  status: open
+  due: 2027-06-15T12:00:00.000Z
+  on track
+  desc: Roadmap for next year
+  cost: $1000.00
+
+Task t7: Zero cost favor
+  owner: Ada Lovelace <ada@taskflow.dev>
+  status: open
+  due: 2026-06-20T12:00:00.000Z
+  on track
+  desc: Small favor for teammate
+  cost: free
+
+Task t8: Fractional cost supplies
+  owner: Ada Lovelace <ada@taskflow.dev>
+  status: open
+  due: 2026-06-18T12:00:00.000Z
+  on track
+  desc: Buy office supplies
+  cost: $0.30
+
+Task t9: Design review
+  owner: Grace Hopper <grace@taskflow.dev>
+  status: open
+  due: 2026-06-16T12:00:00.000Z
+  on track
+  desc: Review new mockups
+  cost: $45.00
+
+Task t10: Overdue report
+  owner: Grace Hopper <grace@taskflow.dev>
+  status: open
+  due: 2026-06-13T12:00:00.000Z
+  ** OVERDUE **
+  desc: Send weekly report
+  cost: free
+
+Task t11: Sprint planning
+  owner: Grace Hopper <grace@taskflow.dev>
+  status: in_progress
+  due: 2026-06-19T12:00:00.000Z
+  on track
+  desc: Plan next sprint
+  cost: free
+
+Task t12: Fix flaky test
+  owner: Grace Hopper <grace@taskflow.dev>
+  status: open
+  due: 2026-06-16T12:00:00.000Z
+  on track
+  desc: Investigate CI flakiness
+  cost: $12.75
+
+Task t13: Onboard new hire
+  owner: Grace Hopper <grace@taskflow.dev>
+  status: open
+  due: 2026-06-22T12:00:00.000Z
+  on track
+  desc: Prepare onboarding docs
+  cost: $0.10
+
+Task t14: Update dependencies
+  owner: Grace Hopper <grace@taskflow.dev>
+  status: done
+  due: 2026-06-05T12:00:00.000Z
+  completed
+  desc: Bump npm packages
+  cost: free
+
+Task t15: Far future audit
+  owner: Grace Hopper <grace@taskflow.dev>
+  status: open
+  due: 2027-04-11T12:00:00.000Z
+  on track
+  desc: Annual compliance audit
+  cost: $500.00
+
+Task t16: Today deadline
+  owner: Grace Hopper <grace@taskflow.dev>
+  status: open
+  due: 2026-06-15T12:00:00.000Z
+  ** OVERDUE **
+  desc: Submit expense report
+  cost: $0.20
+
+Task t17: Refactor auth module
+  owner: Alan Turing <alan@taskflow.dev>
+  status: in_progress
+  due: 2026-06-21T12:00:00.000Z
+  on track
+  desc: Clean up auth code
+  cost: free
+
+Task t18: Overdue security patch
+  owner: Alan Turing <alan@taskflow.dev>
+  status: open
+  due: 2026-06-14T12:00:00.000Z
+  ** OVERDUE **
+  desc: Apply CVE patch
+  cost: free
+
+Task t19: Write unit tests
+  owner: Alan Turing <alan@taskflow.dev>
+  status: open
+  due: 2026-06-18T12:00:00.000Z
+  on track
+  desc: Increase coverage
+  cost: free
+
+Task t20: Team offsite
+  owner: Alan Turing <alan@taskflow.dev>
+  status: open
+  due: 2026-07-30T12:00:00.000Z
+  on track
+  desc: Plan team offsite
+  cost: $3000.00
+
+Task t21: Fractional supplies 2
+  owner: Alan Turing <alan@taskflow.dev>
+  status: open
+  due: 2026-06-17T12:00:00.000Z
+  on track
+  desc: Buy stationery
+  cost: $0.10
+
+Task t22: Far future migration
+  owner: Alan Turing <alan@taskflow.dev>
+  status: open
+  due: 2026-12-12T12:00:00.000Z
+  on track
+  desc: Plan DB migration
+  cost: $800.00
+
+Task t23: Today code freeze
+  owner: Alan Turing <alan@taskflow.dev>
+  status: open
+  due: 2026-06-15T12:00:00.000Z
+  ** OVERDUE **
+  desc: Prep release
+  cost: free
+
+Task t24: Zero cost review
+  owner: Alan Turing <alan@taskflow.dev>
+  status: done
+  due: 2026-06-12T12:00:00.000Z
+  completed
+  desc: Peer code review
+  cost: free
+
+Task t25: Overdue renewal
+  owner: Alan Turing <alan@taskflow.dev>
+  status: open
+  due: 2026-05-31T12:00:00.000Z
+  ** OVERDUE **
+  desc: Renew domain
+  cost: $20.00
+
+-----------------------------------------
+COST BUCKETS
+-----------------------------------------
+  free: 10
+  small (<$1): 6
+  mid ($1-$100): 4
+  large (>$100): 5
+
+=========================================
+END OF REPORT
+========================================="
+`;

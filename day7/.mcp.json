@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "taskflow": {
+      "command": "node",
+      "args": ["mcp/taskflow-server.mjs"]
+    }
+  }
+}
