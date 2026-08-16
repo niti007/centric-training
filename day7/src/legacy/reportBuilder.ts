@@ -48,8 +48,8 @@ function statusLabel(status: Task['status']): string {
 /**
  * Pre-fetches every user referenced by `tasks` exactly once, so downstream
  * report sections can do O(1) map lookups instead of calling
- * userService.getById() once per task/row (fixes defect #5, the
- * reportBuilder N+1).
+ * userService.getById() once per task/row (replaces the previous N+1
+ * lookup pattern).
  */
 function fetchOwners(tasks: Task[]): Map<string, User> {
   const uniqueIds = Array.from(new Set(tasks.map((t) => t.userId)));

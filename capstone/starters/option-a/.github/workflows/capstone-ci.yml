@@ -1,0 +1,62 @@
+name: Capstone CI
+
+# Skeleton CI pipeline for Track A. The lint/build/test job is wired and
+# should run as-is once this file is dropped into your repo's
+# `.github/workflows/`. The headless Claude Code review job is a TODO —
+# CAPSTONE.md deliverable 4 requires it to run in headless mode
+# (`claude -p ...`) and fail the build on a critical finding; that
+# behaviour is not implemented here.
+
+on:
+  push:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run build
+      - run: npm test
+
+  headless-claude-review:
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # TODO (deliverable 4): run Claude Code in headless mode against
+      # this diff and fail the job on a critical finding.
+      #
+      # Things to work out, not decided for you:
+      #   - Headless invocation shape: `claude -p "<prompt>"` (see
+      #     CAPSTONE.md's "headless mode" constraint) vs. an action like
+      #     the one already used at day7/.github/workflows/claude-review.yml
+      #     for inspiration — but that example does not gate on severity,
+      #     it just posts a review. This job needs to actually fail the
+      #     build.
+      #   - Where does the API key come from? A GitHub Actions secret —
+      #     never hardcode it here or log it (see CAPSTONE.md's "no
+      #     secrets in CI logs" constraint).
+      #   - What counts as a "critical finding" and how does the step
+      #     turn that into a non-zero exit code? Consider having the
+      #     prompt request structured output (e.g. JSON with a severity
+      #     field) that a follow-up shell step parses.
+      #   - Should this reuse the sub-agent review team (security/perf/
+      #     style) from deliverable 5, or run a separate lighter check?
+      #     Your call — document the choice in SUBMISSION.md.
+      - name: Headless Claude Code review (TODO)
+        run: |
+          echo "TODO: invoke Claude Code in headless mode here and fail on a critical finding."
+          exit 1

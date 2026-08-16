@@ -1,0 +1,15 @@
+{
+  "_comment": "Template only — copy to .mcp.json and fill in real values. Never commit real tokens/credentials into .mcp.json; use an env var reference or your shell environment instead. See day7/.mcp.json for this repo's existing (non-GitHub) MCP server registration for the general shape.",
+  "mcpServers": {
+    "github": {
+      "_comment": "TODO: pick a real GitHub MCP server implementation and fill in its actual command/args (e.g. an npx-launched package, or a Docker-based server) — this is a placeholder shape, not a working entry.",
+      "command": "REPLACE_WITH_SERVER_LAUNCH_COMMAND",
+      "args": [
+        "REPLACE_WITH_SERVER_ARGS"
+      ],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "REPLACE_WITH_ENV_VAR_REFERENCE_NOT_A_LITERAL_TOKEN"
+      }
+    }
+  }
+}

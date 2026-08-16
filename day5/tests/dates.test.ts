@@ -2,7 +2,7 @@ import { isOverdue } from '../src/util/dates';
 
 describe('isOverdue timezone handling', () => {
   it('treats a UTC due-date-time as overdue only after that exact UTC instant, regardless of local timezone', () => {
-    // Regression test for defect #2. The buggy version normalizes the due
+    // Regression test for the timezone comparison bug. The buggy version normalizes the due
     // date to a *local* midnight before comparing to `now`, which flips
     // this to `true` depending on the machine's timezone offset.
     const dueDateIso = '2026-01-10T23:00:00.000Z';

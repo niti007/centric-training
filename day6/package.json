@@ -12,7 +12,8 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "express": "4.19.2"
+    "express": "4.19.2",
+    "@modelcontextprotocol/sdk": "^1.30.0"
   },
   "devDependencies": {
     "@eslint/js": "9.9.1",

@@ -2,7 +2,7 @@ import * as taskService from '../src/services/taskService';
 
 describe('taskService.list pagination', () => {
   it('page 1 includes the first record', () => {
-    // Regression test for defect #1 (off-by-one pagination). Reverting
+    // Regression test for the pagination off-by-one. Reverting
     // taskService.list to `slice(page * size, page * size + size)` makes
     // this fail: page 1 would return [t4, t5, t6] instead of [t1, t2, t3].
     const result = taskService.list({ page: 1, size: 3, userId: 'u1' });

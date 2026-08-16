@@ -155,8 +155,8 @@ router.post('/bulk', (req: AuthedRequest, res: Response) => {
 
 /**
  * PATCH /tasks/:id
- * Update fields on a task. Ownership-checked (fixed defect #4 — this
- * route previously authenticated but never authorized).
+ * Update fields on a task. Ownership-checked, matching every sibling route
+ * (this route previously authenticated but never authorized).
  */
 router.patch('/:id', (req: AuthedRequest, res: Response) => {
   const existing = taskService.getById(req.params.id);
