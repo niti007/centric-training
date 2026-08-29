@@ -23,7 +23,7 @@ ship something that runs, and be ready to show it working live the next day.
 
 ## The shared repo (all tracks)
 
-Clone **[OrchardCore/OrchardCore](https://github.com/OrchardCore/OrchardCore)**. It's the one
+Clone **[OrchardCMS/OrchardCore](https://github.com/OrchardCMS/OrchardCore)**. It's the one
 codebase every track works against — only the task layered on top of it differs by track.
 
 Why this repo: it's a real, actively-maintained ASP.NET Core application, built the way
