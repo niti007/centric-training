@@ -172,7 +172,6 @@ Every team must demonstrably use:
 - at least one **Skill** (`SKILL.md`)
 - at least one **hook**
 - at least one **sub-agent**
-- **headless mode** (`claude -p`) somewhere in the loop
 - **plan mode** for at least one non-trivial change
 
 And must observe:
@@ -216,7 +215,7 @@ wrong has not been looking, and will be marked down on Best Practices accordingl
 | Criterion | Weight | Observable evidence |
 |---|---|---|
 | **Functionality** | 30% | The mandatory deliverables work. The hard edge case for your track (security scoping, real-data verification, or genuine self-correction) is actually handled. Demo runs live without repair. Partial credit for a working subset honestly scoped. |
-| **Tool usage** | 25% | Skills, hooks, sub-agents, headless mode and plan mode used appropriately — not bolted on to tick the box. Tool choice fits the problem. |
+| **Tool usage** | 25% | Skills, hooks, sub-agents and plan mode used appropriately — not bolted on to tick the box. Tool choice fits the problem. |
 | **Code quality** | 20% | Follows OrchardCore's own conventions rather than fighting them. Tests are meaningful, not tautological. Readable diffs. |
 | **Presentation** | 15% | 20 minutes, well-rehearsed, shows the loop rather than describing it. Handles questions. Honest about limitations. |
 | **Best practices** | 10% | Scoped permissions, no secrets, verification story is real and specific in `SUBMISSION.md`. |
