@@ -136,6 +136,38 @@ between agents have to survive a big codebase's rough edges rather than a tidy t
 it isn't enough for the happy path to work once — you have to show the line catching and fixing
 its own mistake.
 
+### The feature request (feed this to your pipeline)
+
+**Add an automatic "Reading Time" badge to every piece of content in the app.**
+
+Right now, an editor looking at the list of content in OrchardCore has no idea how long any piece
+of content will take to read. Add a small, self-contained extension that works out an estimated
+reading time for any content item that has body text, and shows it next to that item — both in
+the admin screen where editors manage content, and in the app's API response for that item.
+
+This is the request your pipeline should actually work from — feed it in as the written request,
+not the recurring-tasks feature from earlier in this brief.
+
+Minimum behaviour:
+
+| Aspect | Requirement |
+|---|---|
+| Word count | Count the words in the item's body text, ignoring any HTML tags — tags aren't words |
+| Reading speed | Assume 200 words per minute, the standard estimate used by most reading-time tools |
+| Rounding | Always round up to the next whole minute |
+| Minimum | Any content with real text in it shows at least "1 min read" |
+| Empty content | Content with no real text (nothing but empty tags, or just an image) shows nothing — no "0 min", no error |
+| Staying current | The reading time updates automatically every time the content is edited and saved — it should never show a stale number |
+| Where it shows | The admin content list badge and the API response must always agree — never one without the other |
+
+The deliberate hard case, the one most naive attempts get wrong: a content item that's just an
+empty paragraph, or only contains an image with no caption, has **no real words in it** — even
+though the raw HTML isn't empty. A naive implementation that counts HTML tags as words will show
+"1 min read" for something with nothing to read. Getting this right is what separates a working
+pipeline from one that only looks like it works. (This plays the same role the month-end rollover
+case played in the original recurring-tasks brief — it's where most attempts break, and that's
+on purpose.)
+
 ### Mandatory deliverables
 1. A pipeline of three agents — **planner, developer, and checker** — each with its own scoped
    tools and a clear handoff between them.
